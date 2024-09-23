@@ -1,5 +1,5 @@
 echo "Loading plugin..."
-uxp plugin load
+yarn serve
 
 echo "Watching plugin..."
-nodemon --exec "uxp plugin reload" -e js,jsx,html
+yarn watch
