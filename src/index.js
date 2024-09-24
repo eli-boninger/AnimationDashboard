@@ -19,8 +19,9 @@ import '@spectrum-web-components/overlay/sp-overlay.js';
 
 import './style.css';
 
-const { executeAsModal } = require("photoshop").core;
+const { executeAsModal, performMenuCommand } = require("photoshop").core;
 const { batchPlay } = require("photoshop").action;
+
 
 const actions = {
     createVideoTimeline: [
@@ -44,19 +45,35 @@ const actions = {
                 dialogOptions: "dontDisplay"
             }
         }
+    ],
+    openVideoTimeline: [
+        {
+            _obj: "invokeCommand",
+            commandID: 1188,
+            kcanDispatchWhileModal: true,
+            _options: {
+                dialogOptions: "dontDisplay"
+            }
+        }
     ]
 };
 
-const generateBatchPlay = (actionSequence) => async () => {
+const generateBatchPlay = (actionSequence, opts = {}) => async () => {
     await batchPlay(
         actionSequence,
-        {}
+        opts
     );
 
 };
 
 async function runModalFunction(action) {
-    await executeAsModal(generateBatchPlay(action), {});
+    try {
+        const res = await executeAsModal(generateBatchPlay(action), { "commandName": "Action Commands" });
+        return res;
+    } catch (e) {
+        console.error(e);
+    }
+
 }
 
 document.querySelector('#addVideoGroup').addEventListener('click', (e) => {
@@ -65,7 +82,12 @@ document.querySelector('#addVideoGroup').addEventListener('click', (e) => {
 
 document.querySelector('#createVideoTimeline').addEventListener('click', (e) => {
     runModalFunction(actions.createVideoTimeline);
-})
+});
+
+document.querySelector('#openVideoTimeline').addEventListener('click', async (e) => {
+    await executeAsModal(async () => await performMenuCommand({ commandID: 1188, kcanDispatchWhileModal: true, _isCommand: false }));
+
+});
 
 
 
