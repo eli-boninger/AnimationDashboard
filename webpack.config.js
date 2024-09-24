@@ -19,7 +19,6 @@
 import { join, resolve } from 'path';
 
 import CopyWebpackPlugin from 'copy-webpack-plugin';
-import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import { aliases } from "@swc-uxp-wrappers/utils";
 
@@ -56,7 +55,6 @@ const copyStatics = {
  */
 const plugins = [
     new CopyWebpackPlugin(copyStatics),
-    new MiniCssExtractPlugin({ filename: '[name].css' }),
 ];
 
 const shared = (env) => {
@@ -77,14 +75,6 @@ const shared = (env) => {
         );
     }
 
-    const cssLoaders = [
-        {
-            loader: 'css-loader',
-            options: { importLoaders: 1 },
-        },
-
-    ];
-
     return {
         entry: {
             index: './src/index.js',
@@ -101,8 +91,8 @@ const shared = (env) => {
         module: {
             rules: [
                 {
-                    test: /\.css$/,
-                    use: [MiniCssExtractPlugin.loader, ...cssLoaders],
+                    test: /\.css$/i,
+                    use: ["style-loader", "css-loader"],
                 },
             ],
         },

@@ -7,6 +7,31 @@
   resolved "https://registry.yarnpkg.com/@discoveryjs/json-ext/-/json-ext-0.5.7.tgz#1d572bfbbe14b7704e0ba0f39b74815b84870d70"
   integrity sha512-dBVuXR082gk3jsFp7Rd/JI4kytwGHecnCoTtXFb7DB6CNHp4rg5k1bhg0nWdLGLnOV71lmDzGQaLMy8iPLY0pw==
 
+"@floating-ui/core@^1.6.0":
+  version "1.6.8"
+  resolved "https://registry.yarnpkg.com/@floating-ui/core/-/core-1.6.8.tgz#aa43561be075815879305965020f492cdb43da12"
+  integrity sha512-7XJ9cPU+yI2QeLS+FCSlqNFZJq8arvswefkZrYI1yQBbftw6FyrZOxYSh+9S7z7TpeWlRt9zJ5IhM1WIL334jA==
+  dependencies:
+    "@floating-ui/utils" "^0.2.8"
+
+"@floating-ui/dom@^1.5.1":
+  version "1.6.11"
+  resolved "https://registry.yarnpkg.com/@floating-ui/dom/-/dom-1.6.11.tgz#8631857838d34ee5712339eb7cbdfb8ad34da723"
+  integrity sha512-qkMCxSR24v2vGkhYDo/UzxfJN3D4syqSjyuTFz6C7XcpU1pASPRieNI0Kj5VP3/503mOfYiGY891ugBX1GlABQ==
+  dependencies:
+    "@floating-ui/core" "^1.6.0"
+    "@floating-ui/utils" "^0.2.8"
+
+"@floating-ui/utils@^0.1.1":
+  version "0.1.6"
+  resolved "https://registry.yarnpkg.com/@floating-ui/utils/-/utils-0.1.6.tgz#22958c042e10b67463997bd6ea7115fe28cbcaf9"
+  integrity sha512-OfX7E2oUDYxtBvsuS4e/jSn4Q9Qb6DzgeYtsAdkPZ47znpoNsMgZw0+tVijiv3uGNR6dgNlty6r9rzIzHjtd/A==
+
+"@floating-ui/utils@^0.2.8":
+  version "0.2.8"
+  resolved "https://registry.yarnpkg.com/@floating-ui/utils/-/utils-0.2.8.tgz#21a907684723bbbaa5f0974cf7730bd797eb8e62"
+  integrity sha512-kym7SodPp8/wloecOpcmSnWJsK7M0E5Wg8UcFA+uO4B9s5d0ywXOEro/8HM9x0rW+TljRzul/14UYz3TleT3ig==
+
 "@jridgewell/gen-mapping@^0.3.5":
   version "0.3.5"
   resolved "https://registry.yarnpkg.com/@jridgewell/gen-mapping/-/gen-mapping-0.3.5.tgz#dcce6aff74bdf6dad1a95802b69b04a2fcb1fb36"
@@ -151,7 +176,7 @@
   dependencies:
     "@spectrum-web-components/base" "^0.37.0"
 
-"@spectrum-web-components/icon@^0.37.0":
+"@spectrum-web-components/icon@0.37.0", "@spectrum-web-components/icon@^0.37.0":
   version "0.37.0"
   resolved "https://registry.yarnpkg.com/@spectrum-web-components/icon/-/icon-0.37.0.tgz#b955d01b096308c9b6563d6fd1d6082a84862ea9"
   integrity sha512-DZ1yOKHxNQygzIJ7u9akYComDnMmxuTzfmYxxt9sHdUXmc1NbMkCJqEaAG/LYsdb+hc4xWaDTT9SzArLKZ/btA==
@@ -174,6 +199,26 @@
   integrity sha512-s1TBjWeQtGdGf6n+r+aG2glv77IgR0pNs0HLusGyYt6jzWFkP276fE7Neqq/2XvG9a9zvAwngffnWS3td/Gtmg==
   dependencies:
     "@spectrum-web-components/base" "^0.37.0"
+
+"@spectrum-web-components/overlay@0.37.0", "@spectrum-web-components/overlay@^0.37.0":
+  version "0.37.0"
+  resolved "https://registry.yarnpkg.com/@spectrum-web-components/overlay/-/overlay-0.37.0.tgz#6173da0c12b407c572acba15a0024d828e7dea07"
+  integrity sha512-kMEXAWdHJ/RGLbR4GHAEvgb03uaKNJSakVYgqoxQ15Z8PTq669FZQZMvYGr5VftRaXpejm5n1GK+KxuK6Cy+uw==
+  dependencies:
+    "@floating-ui/dom" "^1.5.1"
+    "@floating-ui/utils" "^0.1.1"
+    "@spectrum-web-components/action-button" "^0.37.0"
+    "@spectrum-web-components/base" "^0.37.0"
+    "@spectrum-web-components/reactive-controllers" "^0.37.0"
+    "@spectrum-web-components/shared" "^0.37.0"
+    "@spectrum-web-components/theme" "^0.37.0"
+
+"@spectrum-web-components/reactive-controllers@^0.37.0":
+  version "0.37.0"
+  resolved "https://registry.yarnpkg.com/@spectrum-web-components/reactive-controllers/-/reactive-controllers-0.37.0.tgz#70117433495758217a83105f5bbd0bfb53ca58b1"
+  integrity sha512-1wnWLt88iyTPrElxZqPpyWWzScSkXY3zxi+QxIV0cFGmhRlPsH+XXqs/kGkfzRyNtE4s2AWuRZ2wtbcao6MzJQ==
+  dependencies:
+    lit "^2.5.0"
 
 "@spectrum-web-components/shared@0.37.0", "@spectrum-web-components/shared@^0.37.0":
   version "0.37.0"
@@ -198,6 +243,15 @@
   dependencies:
     "@spectrum-web-components/base" "^0.37.0"
     "@spectrum-web-components/styles" "^0.37.0"
+
+"@spectrum-web-components/tooltip@0.37.0", "@spectrum-web-components/tooltip@^0.37.0":
+  version "0.37.0"
+  resolved "https://registry.yarnpkg.com/@spectrum-web-components/tooltip/-/tooltip-0.37.0.tgz#06dd1d3657d39e103d645e4e19a87458980beeef"
+  integrity sha512-xW48gNYZciP3mhevKEzK6hVxIm/nLgj+ci4EMlzP5AwU5cQGNne5O2Y3OIbUOZHO3/ROhJxG4aLx3m3XROYzwQ==
+  dependencies:
+    "@spectrum-web-components/base" "^0.37.0"
+    "@spectrum-web-components/overlay" "^0.37.0"
+    "@spectrum-web-components/shared" "^0.37.0"
 
 "@swc-uxp-internal/action-button@npm:@spectrum-web-components/action-button@0.37.0":
   version "0.37.0"
@@ -276,6 +330,19 @@
   dependencies:
     "@spectrum-web-components/base" "^0.37.0"
 
+"@swc-uxp-internal/overlay@npm:@spectrum-web-components/overlay@0.37.0":
+  version "0.37.0"
+  resolved "https://registry.yarnpkg.com/@spectrum-web-components/overlay/-/overlay-0.37.0.tgz#6173da0c12b407c572acba15a0024d828e7dea07"
+  integrity sha512-kMEXAWdHJ/RGLbR4GHAEvgb03uaKNJSakVYgqoxQ15Z8PTq669FZQZMvYGr5VftRaXpejm5n1GK+KxuK6Cy+uw==
+  dependencies:
+    "@floating-ui/dom" "^1.5.1"
+    "@floating-ui/utils" "^0.1.1"
+    "@spectrum-web-components/action-button" "^0.37.0"
+    "@spectrum-web-components/base" "^0.37.0"
+    "@spectrum-web-components/reactive-controllers" "^0.37.0"
+    "@spectrum-web-components/shared" "^0.37.0"
+    "@spectrum-web-components/theme" "^0.37.0"
+
 "@swc-uxp-internal/reactive-controllers@npm:@spectrum-web-components/reactive-controllers@0.37.0":
   version "0.37.0"
   resolved "https://registry.yarnpkg.com/@spectrum-web-components/reactive-controllers/-/reactive-controllers-0.37.0.tgz#70117433495758217a83105f5bbd0bfb53ca58b1"
@@ -307,7 +374,16 @@
     "@spectrum-web-components/base" "^0.37.0"
     "@spectrum-web-components/styles" "^0.37.0"
 
-"@swc-uxp-wrappers/action-button@^2.0.0":
+"@swc-uxp-internal/tooltip@npm:@spectrum-web-components/tooltip@0.37.0":
+  version "0.37.0"
+  resolved "https://registry.yarnpkg.com/@spectrum-web-components/tooltip/-/tooltip-0.37.0.tgz#06dd1d3657d39e103d645e4e19a87458980beeef"
+  integrity sha512-xW48gNYZciP3mhevKEzK6hVxIm/nLgj+ci4EMlzP5AwU5cQGNne5O2Y3OIbUOZHO3/ROhJxG4aLx3m3XROYzwQ==
+  dependencies:
+    "@spectrum-web-components/base" "^0.37.0"
+    "@spectrum-web-components/overlay" "^0.37.0"
+    "@spectrum-web-components/shared" "^0.37.0"
+
+"@swc-uxp-wrappers/action-button@2.0.0", "@swc-uxp-wrappers/action-button@^2.0.0":
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/@swc-uxp-wrappers/action-button/-/action-button-2.0.0.tgz#c2fcef766ff19a73c6655c33b5d7f831713f99c1"
   integrity sha512-MsGVtZRxY9jR8oO6X60FEVcrjLSp05YS/rFfqawr4tGKwyqRaOQ4x9THBLcVpRti6c4MuzpDs5CQ3Duz0NqqDw==
@@ -328,6 +404,21 @@
   integrity sha512-gu0SktpuDntmWAyGJ3isNyNHAm2nyKiLWmkPXIZRygSHqpE36wNkeYar6Fdh+wFZcmqYYEL7lIZjqdCZuYcA0w==
   dependencies:
     "@swc-uxp-internal/button" "npm:@spectrum-web-components/button@0.37.0"
+
+"@swc-uxp-wrappers/overlay@^2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@swc-uxp-wrappers/overlay/-/overlay-2.0.0.tgz#9ecb0f47832a1f2f612c7f18c3e7f275982dd86a"
+  integrity sha512-z62AFiL9thiwN1lM1Zwal9YXY4b30tLoaPGg2sGPRCZL7lrRTEDdQzMRC2J7dudqP/BzirDSlzBtqEns9sw60Q==
+  dependencies:
+    "@swc-uxp-internal/overlay" "npm:@spectrum-web-components/overlay@0.37.0"
+    "@swc-uxp-wrappers/action-button" "2.0.0"
+
+"@swc-uxp-wrappers/tooltip@^2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@swc-uxp-wrappers/tooltip/-/tooltip-2.0.0.tgz#4a6c8b2a6a4a32f380bbac86f112d6b8a48593e7"
+  integrity sha512-XC8y8NujE5yCFD1Tpt11tdUbNMletXwaJgB1e1Ozl9pVRyia6/DjFFhlR4GnW+W+3mQtHjlyNg1Hir/4FJhqGg==
+  dependencies:
+    "@swc-uxp-internal/tooltip" "npm:@spectrum-web-components/tooltip@0.37.0"
 
 "@swc-uxp-wrappers/utils@^2.0.1":
   version "2.0.1"
@@ -1339,6 +1430,11 @@ source-map@^0.6.0:
   version "0.6.1"
   resolved "https://registry.yarnpkg.com/source-map/-/source-map-0.6.1.tgz#74722af32e9614e9c287a8d0bbde48b5e2f1a263"
   integrity sha512-UjgapumWlbMhkBgzT7Ykc5YXUT46F0iKu8SGXq0bcwP5dz/h0Plj6enJqjz1Zbq2l5WaqYnrVbwWOWMyF3F47g==
+
+style-loader@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/style-loader/-/style-loader-4.0.0.tgz#0ea96e468f43c69600011e0589cb05c44f3b17a5"
+  integrity sha512-1V4WqhhZZgjVAVJyt7TdDPZoPBPNHbekX4fWnCJL1yQukhCeZhJySUL+gL9y6sNdN95uEOS83Y55SqHcP7MzLA==
 
 supports-color@^8.0.0:
   version "8.1.1"

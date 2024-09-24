@@ -13,4 +13,59 @@ import '@spectrum-web-components/theme/src/express/themes.js';
 // components
 import '@spectrum-web-components/banner/sp-banner.js';
 import '@spectrum-web-components/action-button/sp-action-button.js';
+import '@spectrum-web-components/tooltip/sp-tooltip.js';
+import '@spectrum-web-components/overlay/overlay-trigger.js';
+import '@spectrum-web-components/overlay/sp-overlay.js';
+
+import './style.css';
+
+const { executeAsModal } = require("photoshop").core;
+const { batchPlay } = require("photoshop").action;
+
+const actions = {
+    createVideoTimeline: [
+        {
+            _obj: "makeTimeline",
+            _options: {
+                dialogOptions: "dontDisplay"
+            }
+        }
+    ],
+    addVideoGroup: [
+        {
+            _obj: "make",
+            _target: [
+                {
+                    _ref: "sceneSection"
+                }
+            ],
+            name: "Video Group 1",
+            _options: {
+                dialogOptions: "dontDisplay"
+            }
+        }
+    ]
+};
+
+const generateBatchPlay = (actionSequence) => async () => {
+    await batchPlay(
+        actionSequence,
+        {}
+    );
+
+};
+
+async function runModalFunction(action) {
+    await executeAsModal(generateBatchPlay(action), {});
+}
+
+document.querySelector('#addVideoGroup').addEventListener('click', (e) => {
+    runModalFunction(actions.addVideoGroup);
+});
+
+document.querySelector('#createVideoTimeline').addEventListener('click', (e) => {
+    runModalFunction(actions.createVideoTimeline);
+})
+
+
 
